@@ -1,0 +1,335 @@
+/* Theme colors */
+:root {
+  --color1: #acb1f7;
+  --color2: #828cce;
+  --color3: #5868a6;
+  --color4: #2d437d;
+  --color5: #031f55;
+
+  /* Semantic color mapping */
+  --success: var(--color3);
+  --success-light: var(--color2);
+  --success-dark: var(--color4);
+
+  --info: var(--color2);
+  --info-light: var(--color1);
+  --info-dark: var(--color3);
+
+  --error: #e53e3e;
+  --error-light: #fc8181;
+  --error-dark: #c53030;
+}
+
+/* Dark mode styles */
+.dark {
+  --bg-primary: var(--color5);
+  --bg-secondary: var(--color4);
+  --text-primary: white;
+  --text-secondary: #e0e0e0;
+  color-scheme: dark;
+
+  /* Dark mode semantic colors */
+  --success: var(--color2);
+  --success-light: var(--color1);
+  --success-dark: var(--color3);
+}
+
+/* Light mode styles */
+:root:not(.dark) {
+  --bg-primary: var(--color1);
+  --bg-secondary: var(--color2);
+  --text-primary: var(--color5);
+  --text-secondary: var(--color4);
+  color-scheme: light;
+}
+
+/* Global dark mode overrides */
+.dark {
+  @apply text-white;
+}
+
+.dark .bg-white {
+  @apply bg-gray-800;
+}
+
+.dark .text-gray-900 {
+  @apply text-white;
+}
+
+.dark .text-gray-700 {
+  @apply text-gray-300;
+}
+
+.dark .text-gray-600 {
+  @apply text-gray-400;
+}
+
+.dark .text-gray-500 {
+  @apply text-gray-400;
+}
+
+.dark .border-gray-200 {
+  @apply border-gray-700;
+}
+
+.dark .bg-gray-50 {
+  @apply bg-gray-900;
+}
+
+.dark .bg-gray-100 {
+  @apply bg-gray-800;
+}
+
+.dark .shadow-md {
+  @apply shadow-gray-900;
+}
+
+/* Component-specific dark mode styles */
+.dark .w-card {
+  @apply bg-gray-800 text-white;
+}
+
+.dark .w-input, 
+.dark .w-select, 
+.dark .w-textarea {
+  @apply bg-gray-800 text-white border-gray-700;
+}
+
+.dark .w-button:not([class*="bg-"]) {
+  @apply bg-primary-400 text-white;
+}
+
+/* Primary color utility classes */
+.bg-primary {
+  @apply bg-primary-300;
+}
+
+.text-primary {
+  @apply text-primary-500;
+}
+
+.border-primary {
+  @apply border-primary-300;
+}
+
+.hover\:bg-primary:hover {
+  @apply hover:bg-primary-400;
+}
+
+.dark .bg-primary {
+  @apply bg-primary-500;
+}
+
+.dark .text-primary {
+  @apply text-primary-100;
+}
+
+.dark .border-primary {
+  @apply border-primary-400;
+}
+
+.dark .hover\:bg-primary:hover {
+  @apply hover:bg-primary-300;
+}
+
+/* Modal styles (w-dialog) */
+.w-dialog {
+  @apply bg-white rounded-lg shadow-lg;
+}
+
+.dark .w-dialog {
+  @apply bg-gray-800 text-white;
+}
+
+/* Button styles with primary colors */
+.w-button {
+  @apply transition-colors duration-200;
+}
+
+.w-button[bg-color="primary"],
+.w-button:not([bg-color]) {
+  @apply bg-primary-300 text-white hover:bg-primary-400;
+}
+
+.dark .w-button[bg-color="primary"],
+.dark .w-button:not([bg-color]) {
+  @apply bg-primary-500 text-white hover:bg-primary-400;
+}
+
+/* Success button */
+.w-button[bg-color="success"] {
+  background-color: var(--success) !important;
+  @apply text-white hover:opacity-90;
+}
+
+/* Info button */
+.w-button[bg-color="info"] {
+  background-color: var(--info) !important;
+  @apply text-white hover:opacity-90;
+}
+
+/* Error button */
+.w-button[bg-color="error"] {
+  background-color: var(--error) !important;
+  @apply text-white hover:opacity-90;
+}
+
+/* Outline buttons */
+.w-button[outline] {
+  @apply bg-transparent border border-primary-300 text-primary-500 hover:bg-primary-100/20;
+}
+
+.dark .w-button[outline] {
+  @apply border-primary-400 text-primary-100 hover:bg-primary-500/20;
+}
+
+/* Table styles */
+.w-table {
+  @apply rounded-lg overflow-hidden;
+}
+
+.w-table thead {
+  @apply bg-primary-100/50;
+}
+
+.dark .w-table thead {
+  @apply bg-primary-500/50;
+}
+
+.w-table tbody tr:hover {
+  @apply bg-primary-100/30 !important;
+}
+
+.dark .w-table tbody tr:hover {
+  @apply bg-primary-500/30 !important;
+}
+
+/* Form elements focus states */
+.w-input:focus-within,
+.w-select:focus-within,
+.w-textarea:focus-within {
+  @apply border-primary-300 ring-1 ring-primary-300;
+}
+
+.dark .w-input:focus-within,
+.dark .w-select:focus-within,
+.dark .w-textarea:focus-within {
+  @apply border-primary-400 ring-1 ring-primary-400;
+}
+
+/* Progress bars */
+.bg-green-600 {
+  @apply bg-primary-300;
+}
+
+.bg-blue-600 {
+  @apply bg-primary-400;
+}
+
+.dark .bg-green-600 {
+  @apply bg-primary-200;
+}
+
+.dark .bg-blue-600 {
+  @apply bg-primary-300;
+}
+
+/* Card background colors */
+.bg-green-50 {
+  @apply bg-primary-100/20;
+}
+
+.bg-red-50 {
+  @apply bg-red-100/20;
+}
+
+.bg-blue-50 {
+  @apply bg-primary-100/30;
+}
+
+.dark .bg-green-50,
+.dark .bg-red-50,
+.dark .bg-blue-50 {
+  @apply bg-gray-800;
+}
+
+/* Text colors */
+.text-green-600 {
+  @apply text-primary-400;
+}
+
+.text-red-600 {
+  @apply text-red-500;
+}
+
+.text-blue-600 {
+  @apply text-primary-500;
+}
+
+.text-yellow-600 {
+  @apply text-primary-300;
+}
+
+.dark .text-green-600 {
+  @apply text-primary-200;
+}
+
+.dark .text-red-600 {
+  @apply text-red-400;
+}
+
+.dark .text-blue-600 {
+  @apply text-primary-100;
+}
+
+.dark .text-yellow-600 {
+  @apply text-primary-300;
+}
+
+/* Dividers */
+.divide-gray-200 {
+  @apply divide-primary-100;
+}
+
+.dark .divide-gray-200 {
+  @apply divide-primary-500;
+}
+
+/* Progress component */
+.w-progress {
+  @apply transition-colors duration-200;
+}
+
+.w-progress[color="green"],
+.w-progress[color="success"] {
+  --w-progress-color: var(--success) !important;
+}
+
+.w-progress[color="warning"] {
+  --w-progress-color: var(--color2) !important;
+}
+
+.w-progress[color="error"] {
+  --w-progress-color: var(--error) !important;
+}
+
+.w-progress[color="primary"] {
+  --w-progress-color: var(--color3) !important;
+}
+
+.dark .w-progress[color="green"],
+.dark .w-progress[color="success"] {
+  --w-progress-color: var(--success) !important;
+}
+
+.dark .w-progress[color="warning"] {
+  --w-progress-color: var(--color1) !important;
+}
+
+.dark .w-progress[color="error"] {
+  --w-progress-color: var(--error-light) !important;
+}
+
+.dark .w-progress[color="primary"] {
+  --w-progress-color: var(--color2) !important;
+}
