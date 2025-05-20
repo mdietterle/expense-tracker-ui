@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-    baseURL: 'http://localhost:8000/api',
+    baseURL: 'https://expense-tracker-api-9fd3.onrender.com/api',
     timeout: 30000,
     headers: {
         'Content-Type': 'application/json',
